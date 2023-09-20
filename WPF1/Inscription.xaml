@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPF1.Inscription"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF1"
+        mc:Ignorable="d"
+        Title="Inscription" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="id:" Margin="5"/>
+        <TextBox Grid.Row="1" Name="username" Margin="5" />
+        <Label Grid.Row="2" Content="mot de passe:" Margin="5"/>
+        <PasswordBox Grid.Row="3" Name="mdp" Margin="5"/>
+        <Label Grid.Row="4" Content="Poids :" Margin="5"/>
+        <TextBox Grid.Row="5" Name="Poids" Margin="5" InputScope="Number" />
+        <Label Grid.Row="6" Content="Taille :" Margin="5"/>
+        <TextBox Grid.Row="7" Name="Taille" Margin="5" />
+        <Button Grid.Row="8" Content="S'inscrire" Margin="5" Click="SInscrire_Click"/>
+    </Grid>
+</Window>

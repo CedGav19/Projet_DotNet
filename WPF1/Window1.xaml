@@ -1,0 +1,38 @@
+﻿<Window x:Class="WPF1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF1"
+        xmlns:mainView="clr-namespace:MainView;assembly=MainView"
+        mc:Ignorable="d"
+        Title="Window1" Height="300" Width="300"
+        d:DataContext="{d:DesignInstance mainView:Data, IsDesignTimeCreatable=True}"
+        >
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+          <StackPanel Orientation="Horizontal">
+              <TextBox Text="Aliment : "></TextBox>
+              <ComboBox x:Name="ComboBoxAliment" ItemsSource="{Binding ListAliments , UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="nom" SelectedItem="{Binding AlimentCBSelected}">
+              </ComboBox>
+          </StackPanel>
+            <TextBox Text="Aliments selectionné : "></TextBox>
+
+            <Image Source="{Binding Instance.AlimentCBSelected.image, UpdateSourceTrigger=PropertyChanged}" Height="100" ></Image>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="nom : "></TextBlock>
+                <TextBlock  Text="{Binding Instance.AlimentCBSelected.nom , UpdateSourceTrigger=PropertyChanged }"  ></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="kcal : "></TextBlock>
+                <TextBlock Text="{Binding Instance.AlimentCBSelected.kcal , UpdateSourceTrigger=PropertyChanged }"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="protéine : "></TextBlock>
+                <TextBlock Text="{Binding Instance.AlimentCBSelected.proteine , UpdateSourceTrigger=PropertyChanged }"></TextBlock> 
+            </StackPanel>
+          
+            <Button Click="Button_Click">Ajouter </Button>
+        </StackPanel>
+    </Grid>
+</Window>

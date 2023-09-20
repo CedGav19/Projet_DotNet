@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPF1.WindowObjectif"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF1"
+        xmlns:mainView="clr-namespace:MainView;assembly=MainView"
+        mc:Ignorable="d"
+        Title="WindowObjectif" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance mainView:Data, IsDesignTimeCreatable=True}"
+>
+    <Grid>
+            
+        <StackPanel Orientation="Vertical">
+            <DatePicker SelectedDate="{Binding Instance.NvObjectif.dateSouhaite}" />
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock   Text="Intitulé : "></TextBlock>
+                <TextBox  Text="{Binding Instance.NvObjectif.intitule, UpdateSourceTrigger=PropertyChanged}" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock   Text="Objectifs de poids : "></TextBlock>
+                <TextBox  Text="{Binding Instance.NvObjectif.poidsSouhaite,UpdateSourceTrigger=PropertyChanged}" Width="100"></TextBox>
+            </StackPanel>
+            <Button Click="ButtonAjouter_Click" >Ajouter l'objectif</Button>
+        </StackPanel>
+        
+            
+    </Grid>
+
+  
+</Window>
